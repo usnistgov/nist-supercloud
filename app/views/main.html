@@ -1,0 +1,30 @@
+<div class="jumbotron">
+  <h3>Latency Demo</h3>
+  <p class="lead">
+    <img src="images/logo.png" alt="SuperCloudLogo" width="200" height="100"><br>
+  <h4>Latency collected from the calling 2nd layer VM </h4> <br \>
+  <smoothie-grid background="#000FFF" width="400" height="200">
+    <time-series callback="l2vm()" color="red" rate="100"></time-series>
+    <time-series callback="foo()" color="#4b8e4b" fill="rgba(108, 255, 0, 0.34)" width="0" rate="200"></time-series>
+  </smoothie-grid>
+  </p>
+  <p><a class="btn btn-lg btn-success" ng-href="#/">List The available 2nd layer VMs</a></p>
+</div>
+
+<div class="row marketing">
+  <h4>Latency calculation method </h4>
+  <p>
+    Initialisation step : the page calls the server to get a minimal page and calculate the round trip time
+  </p>
+  <p>
+    Loop : the page calls the server, pass the last round trip time and and calculate the new round trip time
+  </p>
+
+  <h4>The Latency service</h4>
+  <p>
+    A dedicate web service is available at HOST/#/latency/VM-IP/VM-TIME/ROUND-TRIP-TIME.
+  </p>
+  <p>
+    The main page calls this service each 500 milliseconds
+  </p>
+

@@ -11,3 +11,19 @@ availability zones within a cloud provider or across different cloud providers. 
 and migration within availability zones or across. Unlike conventional VM placement, application-level VM placement 
 does not specify the underlying machine, but it can specify the availability zone and whether two VMs should be 
 co-located on the same machine (and possibly rack) or not. 
+
+
+## Build & development
+
+Run `grunt` for building and `grunt serve` for preview.
+
+## Testing
+
+Running `grunt test` will run the unit tests with karma.
+
+## tools
+
+This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
+version 0.15.1.
+
+[SmoothieCharts](http://smoothiecharts.org)  is used a chart library 
