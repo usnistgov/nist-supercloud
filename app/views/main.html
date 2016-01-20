@@ -5,10 +5,11 @@
   <h4>Latency collected from the calling 2nd layer VM </h4> <br \>
   <smoothie-grid background="#000FFF" width="400" height="200">
     <time-series callback="l2vm()" color="red" rate="100"></time-series>
-    <time-series callback="foo()" color="#4b8e4b" fill="rgba(108, 255, 0, 0.34)" width="0" rate="200"></time-series>
+    <!--<time-series callback="foo()" color="#4b8e4b" fill="rgba(108, 255, 0, 0.34)" width="0" rate="200"></time-series>-->
   </smoothie-grid>
   </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">List The available 2nd layer VMs</a></p>
+  <p><!--<label>{{ myFieldLabel }}</label>-->
+    <a class="btn btn-lg btn-success" ng-href="#/">List The available 2nd layer VMs</a></p>
 </div>
 
 <div class="row marketing">
@@ -28,3 +29,25 @@
     The main page calls this service each 500 milliseconds
   </p>
 
+  <script language="JavaScript">
+
+    var sendDate = (new Date()).getTime();
+    var destination = "http://"+window.document.location.hostname+":8080/api/latency/"+window.document.location.hostname+"/";
+    var intervalTime = 400;
+    var responseTimeMs = 0;
+    var callSrv = setInterval(srvTimer, intervalTime);
+
+    function srvTimer() {
+
+      var receiveDate = "n/a";
+      var localDest  = destination + sendDate+"/"+responseTimeMs;
+      console.log("srvTimer " + localDest);
+      sendDate = (new Date()).getTime();
+      $.post(localDest, function(data, status){
+        receiveDate = (new Date()).getTime();
+        responseTimeMs = receiveDate - sendDate;
+        console.log(status + " " + localDest);
+        //console.log("Data " + data);
+      });
+    }
+  </script>

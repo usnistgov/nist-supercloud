@@ -37,5 +37,15 @@
   },
   "scripts": {
     "test": "grunt test"
+  },
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "cors": "^2.7.1",
+    "express": "^4.13.3",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.19",
+    "method-override": "^2.3.5",
+    "morgan": "^1.6.1",
+    "phantomjs": "^1.9.19"
   }
 }

@@ -1,5 +1,6 @@
 'use strict';
 
+
 /**
  * @ngdoc overview
  * @name nistSupercloudApp
@@ -29,7 +30,7 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
-      .when('/latency/:lIp/:lTime/:lvalue', {
+      .when('/latency/:lIp/:lTime/:lValue', {
         templateUrl: 'views/latency.html',
         controller: 'LatencyCtrl',
         controllerAs: 'latency'

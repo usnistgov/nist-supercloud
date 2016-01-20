@@ -40,7 +40,7 @@
 
             <ul class="nav navbar-nav">
               <li class="active"><a href="#/">Home</a></li>
-              <!-- <li><a ng-href="#/latency">Latency</a></li> -->
+              <li><a ng-href="#/latency/localhost/1453267998577/8">Latency</a></li>
               <li><a ng-href="#/about">About</a></li>
               <li><a ng-href="#/">Contact</a></li>
             </ul>
@@ -95,42 +95,6 @@
         <script src="scripts/directives/timeseries.js"></script>
         <script src="scripts/services/responsetimes.js"></script>
         <!-- endbuild -->
-  <script language="JavaScript">
-    $(document).ready(function () {
-      //setInterval(ajax_call(0), 5000);
-      setInterval(ajax_call(0), 50000);
 
-    });
-
-
-    var ajax_call = function(responseTimeMs) {
-      var sendDate = (new Date()).getTime();
-      var destination = "http://"+window.document.location.host+"/#/latency/"+window.document.location.hostname+"/"+sendDate+"/"+responseTimeMs;
-      $.ajax({
-          url: destination,
-          beforeSend: function( xhr ) {
-            xhr.overrideMimeType( "text/plain; charset=x-user-defined" );
-            sendDate = (new Date()).getTime();
-          }
-        })
-        .done(function() {
-          var receiveDate = (new Date()).getTime();
-          responseTimeMs = receiveDate - sendDate;
-          //setInterval(ajax_call(responseTimeMs), 5000);
-          //alert( "success" );
-        })
-        .fail(function() {
-          var receiveDate = (new Date()).getTime();
-          responseTimeMs = receiveDate - sendDate;
-          //setInterval(ajax_call(responseTimeMs), 50000);
-          alert( "error : " + destination );
-        })
-        .always(function() {
-
-          //alert( "complete" );
-
-        });
-    };
-  </script>
 </body>
 </html>

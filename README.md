@@ -26,4 +26,4 @@ Running `grunt test` will run the unit tests with karma.
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 version 0.15.1.
 
-[SmoothieCharts](http://smoothiecharts.org)  is used a chart library 
+[SmoothieCharts](http://smoothiecharts.org)  is used as a chart library 

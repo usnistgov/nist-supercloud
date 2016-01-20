@@ -8,9 +8,16 @@
  * Controller of the nistSupercloudApp
  */
 angular.module('nistSupercloudApp')
-  .controller('MainCtrl', function ($scope, responseTimes) {
+  .controller('MainCtrl',['$scope','responseTimes', function ($scope, responseTimes) {
     $scope.l2vm = function() {
-      return [responseTimes.virtualMachine.time, responseTimes.virtualMachine.value];
+
+      var vm = {};
+      vm = responseTimes.fetch("localhost");
+      console.log("MainCtrl " + JSON.stringify(vm));
+      //TODO rename value in rrt
+      //$scope.myFieldLabel =  '|'+responseTimes.virtualMachine.name + '|';
+      //return [vm.time , vm.value];
+      return [new Date().getTime(), Math.random() * 30.0];
     };
 
     $scope.foo = function() {
@@ -20,4 +27,4 @@ angular.module('nistSupercloudApp')
     $scope.goo = function() {
       return [new Date().getTime(), Math.random() * 30.0];
     };
-  });
+  }]);
