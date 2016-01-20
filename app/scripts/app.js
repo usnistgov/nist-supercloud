@@ -30,7 +30,7 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
-      .when('/latency/:lIp/:lTime/:lValue', {
+      .when('/latency', {
         templateUrl: 'views/latency.html',
         controller: 'LatencyCtrl',
         controllerAs: 'latency'

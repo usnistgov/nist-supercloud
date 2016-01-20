@@ -30,6 +30,7 @@ var VirtialMachines = {};
 // get all VMs
 app.get('/api/vms', function(req, res) {
   res.json(VirtialMachines); // return all VMs in JSON format
+  console.log("app.get /api/vms" + JSON.stringify(VirtialMachines));
 });
 
 app.get('/api/latency/:lName', function(req, res) {
@@ -44,8 +45,8 @@ app.post('/api/latency/:lName/:lTime/:lValue', function(req, res) {
   // create a VM, information comes from AJAX request from the VM agent
   VirtialMachines[req.params.lName]={
     name: req.params.lName,
-    value: req.params.lTime,
-    time: req.params.lValue
+    value: req.params.lValue,
+    time: req.params.lTime
   };
   console.log("app.post " + JSON.stringify(VirtialMachines));
   res.json(VirtialMachines);

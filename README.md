@@ -15,7 +15,11 @@ co-located on the same machine (and possibly rack) or not.
 
 ## Build & development
 
-Run `grunt` for building and `grunt serve` for preview.
+Run `grunt` for building 
+
+`node server/server.js` to run the rest service as a server.
+
+`grunt serve` for preview.
 
 ## Testing
 
@@ -26,4 +30,7 @@ Running `grunt test` will run the unit tests with karma.
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 version 0.15.1.
 
+## libraries
+
+[Enable All CORS Requests](https://www.npmjs.com/package/cors)  
 [SmoothieCharts](http://smoothiecharts.org)  is used as a chart library 

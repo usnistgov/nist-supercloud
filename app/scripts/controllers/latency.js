@@ -8,13 +8,10 @@
  * Controller of the nistSupercloudApp
  */
 angular.module('nistSupercloudApp')
-  .controller("LatencyCtrl", ['$scope','$routeParams','responseTimes',
-    function($scope, $routeParams, responseTimes) {
-      responseTimes.virtualMachine.name = $routeParams.lIp;
-      responseTimes.virtualMachine.time = $routeParams.lTime;
-      responseTimes.virtualMachine.value =  $routeParams.lValue;
-      console.log("LatencyCtrl " + JSON.stringify(responseTimes.virtualMachine));
-
+  .controller("LatencyCtrl", ['$scope','responseTimes',
+    function($scope, responseTimes) {
+      $scope.vms = responseTimes.vmList();
+      console.log("LatencyCtrl " + JSON.stringify($scope.vms));
     }]);
 /*
 // Randomly add a data point every 500ms

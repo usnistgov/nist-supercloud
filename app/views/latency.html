@@ -1,2 +1,18 @@
-<p>This is the latency view.</p>
+<div class="jumbotron">
+  <h3>List of connected VMs</h3>
+  <div ng-repeat="(vmName, vm)  in vms">
+    <div class="card card-inverse card-danger text-xs-center">
+      <div class="card-block">
+        <blockquote class="card-blockquote">
+        <h3 class="card-title">{{vmName}} : </h3>
+        <p class="card-text">
+        <div ng-repeat="(key, value) in vm">
+          <h4><span class="label label-pill label-info">{{key}} : {{value}}</span></h4>
+        </div>
+        </p>
+        </blockquote>
+      </div>
 
+    </div>
+  </div>
+</div>

@@ -31,7 +31,9 @@ angular.module('nistSupercloudApp')
             fillStyle: $scope.gridLabelsColor || 'transparent'
           },
           labels: {
-            fillStyle: $scope.background || 'transparent'
+            fillStyle: $scope.background || 'transparent',
+            fontSize:20,
+            precision:6
           },
           timestampFormatter:
             SmoothieChart.timeFormatter
