@@ -21,6 +21,7 @@ angular.module('nistSupercloudApp')
       },
 
       controller: function($scope, $element) {
+          console.log("creating a new timeSeries");
         $scope.rate = $scope.rate || 1000;
         $scope.line = new TimeSeries();
         $scope.callback = $scope.callback ? $scope.callback : function() { return false; };

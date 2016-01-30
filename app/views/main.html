@@ -2,14 +2,17 @@
   <h3>Latency Demo</h3>
   <p class="lead">
     <img src="images/logo.png" alt="SuperCloudLogo" width="200" height="100"><br>
-  <h4>Latency collected from the calling 2nd layer VM </h4> <br \>
-  <smoothie-grid background="#000FFF" width="600" height="300">
-    <time-series callback="l2vm()" color="red" rate="500"></time-series>
-    <time-series callback="foo()" color="#4b8e4b" fill="rgba(108, 255, 0, 0.34)" width="0" rate="500"></time-series>
-  </smoothie-grid>
+    <h4>Latency collected from the calling 2nd layer VM </h4> <br>
+    <smoothie-grid background="#000FFF" width="600" height="300" >
+        <time-series callback="l2vm(vmName)" color="rcolor()" rate="1000" ng-repeat="(vmName, vm) in vms"></time-series>
+        <!--
+        <time-series callback="foo()" color="#4b8e4b" fill="rgba(108, 255, 0, 0.34)" width="0" rate="500"></time-series>
+        -->
+    </smoothie-grid>
   </p>
   <p><!--<label>{{ myFieldLabel }}</label>-->
-    <a class="btn btn-lg btn-success" ng-href="#/latency">List The available 2nd layer VMs</a></p>
+    <a class="btn btn-lg btn-success" ng-href="#/latency">List The available 2nd layer VMs</a>
+  </p>
 </div>
 
 <div class="row marketing">
@@ -28,7 +31,8 @@
   <p>
     The main page calls this service each 500 milliseconds
   </p>
-
+</div>
+<!--
   <script language="JavaScript">
 
     var sendDate = (new Date()).getTime();
@@ -51,3 +55,4 @@
       });
     }
   </script>
+-->

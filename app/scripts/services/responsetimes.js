@@ -12,7 +12,7 @@ angular.module('nistSupercloudApp')
     var virtualMachine;
     this.fetch =  function(name) {
 
-      $http.get("http://localhost:8080/api/latency/"+name)
+      $http.get("http://192.168.15.101:8080/api/latency/"+name)
         .then(function (res) {
           console.log("responseTimes " + JSON.stringify(res.data));
           virtualMachine = res.data;
@@ -22,7 +22,7 @@ angular.module('nistSupercloudApp')
     var ret;
     this.vmList =  function() {
 
-      $http.get("http://localhost:8080/api/vms")
+      $http.get("http://192.168.15.101:8080/api/vms")
         .then(function (res) {
           console.log("vmList " + JSON.stringify(res.data));
           ret = res.data;

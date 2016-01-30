@@ -1,6 +1,7 @@
 {
   "name": "nistsupercloud",
   "private": true,
+  "version": "1.0.0",
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
     "grunt": "^0.4.5",
@@ -46,6 +47,7 @@
     "karma": "^0.13.19",
     "method-override": "^2.3.5",
     "morgan": "^1.6.1",
-    "phantomjs": "^1.9.19"
+    "phantomjs": "^1.9.19",
+    "request":"^2.68.1"
   }
 }
