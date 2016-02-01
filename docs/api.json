@@ -1,0 +1,59 @@
+/*
+Create a new observation of property :property of asset :assetId from agent :agentId
+POST .../monitor/api/:assetId/:property/:agentId/observation/
+*/
+{
+    "agentId": "",
+    "timestamp" : "",
+    "value" : "",
+    "observationCapability" : {
+        "property":"",
+        "metricId": "",
+        "assetId": ""
+    }
+}
+
+/*
+Register a new agent for a given asset 
+POST .../monitor/api/:assetId/agent/
+*/
+{
+    "observationCapabilities" : [
+        {
+            "property": "",
+            "metricId":"",
+            "assetId":""
+        }
+    ]
+  
+}
+
+
+/*
+Register a new asset
+POST .../monitor/api/asset/
+*/
+
+/*
+Find asset(s) based on search criteria 
+GET .../monitor/api/assets?<search_parameters>
+*/
+
+/*
+Retrieve a unique asset
+GET .../monitor/api/assets/:assetId
+*/
+
+/*
+Retrieve observations for an observation capability
+*/
+{
+    "agentId": "",
+    "timestamp" : "",
+    "value" : "",
+    "observationCapability" : {
+        "property":"",
+        "metricId": "",
+        "assetId": ""
+    }
+}
