@@ -1,0 +1,34 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+    
+    config.vm.define "spcmonitor" do |spcmonitor|
+        spcmonitor.vm.box = "ubuntu64-nist"
+        spcmonitor.vm.provision :shell, :path => "vagrant-config/bootstrap-monitor-spc.sh"
+        spcmonitor.vm.host_name = "spcmonitor"
+        spcmonitor.vm.network :private_network, ip: "192.168.15.101"
+    end
+    
+    config.vm.define "spcmonitoragent" do |spcmonitoragent|
+        spcmonitoragent.vm.box = "ubuntu64-nist"
+        spcmonitoragent.vm.provision :shell, :path => "vagrant-config/bootstrap-monitor-spc.sh"
+        spcmonitoragent.vm.host_name = "spcmagent"
+        spcmonitoragent.vm.network :private_network, ip: "192.168.15.102"
+    end
+    
+    config.vm.define "spcmonitoragent1" do |spcmonitoragent1|
+        spcmonitoragent1.vm.box = "ubuntu64-nist"
+        spcmonitoragent1.vm.provision :shell, :path => "vagrant-config/bootstrap-monitor-spc.sh"
+        spcmonitoragent1.vm.host_name = "spcmagent1"
+        spcmonitoragent1.vm.network :private_network, ip: "192.168.15.103"
+    end
+    
+    config.vm.define "spcmonitorstorage" do |spcmonitorstorage|
+        spcmonitorstorage.vm.box = "ubuntu64-nist"
+        spcmonitorstorage.vm.provision :shell, :path => "vagrant-config/bootstrap-storage-spc.sh"
+        spcmonitorstorage.vm.host_name = "spcmonitorstorage"
+        spcmonitorstorage.vm.network :private_network, ip: "192.168.15.104"
+    end
+
+end

@@ -2,6 +2,7 @@
 Create a new observation of property :property of asset :assetId from agent :agentId
 POST .../monitor/api/:assetId/:property/:agentId/observation/
 */
+// input
 {
     "agentId": "",
     "timestamp" : "",
@@ -17,6 +18,7 @@ POST .../monitor/api/:assetId/:property/:agentId/observation/
 Register a new agent for a given asset 
 POST .../monitor/api/:assetId/agent/
 */
+// input
 {
     "observationCapabilities" : [
         {
@@ -33,6 +35,14 @@ POST .../monitor/api/:assetId/agent/
 Register a new asset
 POST .../monitor/api/asset/
 */
+//input
+{
+    "name":"",
+    "category":""
+}
+
+// output
+
 
 /*
 Find asset(s) based on search criteria 
@@ -47,6 +57,7 @@ GET .../monitor/api/assets/:assetId
 /*
 Retrieve observations for an observation capability
 */
+// output
 {
     "agentId": "",
     "timestamp" : "",

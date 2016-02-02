@@ -58,6 +58,14 @@ app.delete('/api/vm/:lName', function(req, res) {
   VirtialMachines[req.params.lName]= null;
 });
 
+// new api ---------------------------------------------------------------------
+// create asset
+app.post('/monitor/api/asset', function(req,res) {
+   console.log("app.post "+req.body); 
+});
+// create agent
+
+
 // listen (start app with node server.js) ======================================
 app.listen(8080);
 console.log("App listening on port 8080");
